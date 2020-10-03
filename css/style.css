@@ -1,0 +1,118 @@
+body {background: pink;}
+
+
+		@-webkit-keyframes movingg {
+		0% {width: 1%; margin-left: 0%}
+		50% {width: 2%; margin-left: 2%}
+		100% {width: 1% margin-left: 0%}
+	}
+		@-webkit-keyframes moving {
+		0% {width: 10%; margin-right: 0%}
+		50% {width: 5%; margin-right: 5%}
+		100% {width: 10% margin-right: 0%}
+	}
+
+@keyframes opacitys {
+		0% {opacity: 1; transform: rotate(0deg) scale(1, 1);}
+		50% {opacity: 0; transform: rotate(180deg) scale(.5, .5);}
+		100% {opacity: 1; transform: rotate(0deg) scale(1, 1);}
+	}
+
+	.grid {width: 100%; height: 50%;
+		display: flex; align-items: center; justify-content: space-around;}
+
+	.box {width: 300px; height: 300px; border-radius: 150px;  background-color: black;
+		display: flex; align-items: center; justify-content: space-around; clip-path: circle(50%);
+		transition-property: all; transition-duration: 5s;
+		animation: opacitys; animation-duration: 2s; animation-fill-mode: forwards; animation-iteration-count: infinite;
+		animation-play-state: paused;}
+
+	.box:hover {background-color: black;
+			animation-play-state: running;}
+
+	.bg {width: 100%; height: 100%; 
+		display: flex; align-items: center; justify-content: space-around; position: relative;}
+
+	.line {width: 1%; height: 100%; background-color: pink;
+		animation-name: moving; animation-duration: 4.2s; animation-iteration-count: infinite; animation-timing-function: ease-in-out;}
+
+	.line2 {width: 1%; height: 100%; background-color: black; 
+		animation-name: movingg; animation-duration: 4.2s; animation-iteration-count: infinite;}
+
+
+
+
+/*
+position: relative; - 상대값
+position: absolute; - 절대값
+position: fixed; - 고정
+*/
+
+/*
+margin - 외부간격
+padding - 내부간격
+*/
+
+/* flex
+기본 설정으로 좌측에서 우측으로 아이템 정렬[Flex가 적용된 div 안에 적용]
+기본 설정으로 한 줄에 아이템이 다 들어가며, 동등한 비율로 영역 차지
+flex-direction: column으로 진행방향 변경 가능[상-하 정렬]
+*/
+
+/* Align-items[세로 정렬]
+center: 가운데 정렬
+flex-start: 상단 정렬
+flex-end: 하단 정렬 
+
+justify-content[가로 정렬]
+space-between: 대지 기준 세로 가운데 정렬
+center: 세로 가운데 / 가로 가운데 정렬
+space-around: 일정한 공간 배분
+
+/* CSS transition
+transition-property : transition을 적용시킬 속성을 정합니다. 
+	all: 모두 적용;
+transition-timing-function : transition의 진행 속도를 정합니다. 
+transition-duration : transition의 총 시간을 정합니다.
+transition-delay : transition의 시직을 연기합니다.
+*/
+
+/* Animation
+animation-name
+animation-duration: 1 사이클의 애니메이션이 얼마에 걸쳐 일어날 지 지정
+animation-delay: 엘리먼트가 로드되고 나서 언제 애니메이션을 시작할지 지정
+animation-direction: 애니메이션이 종료되고 다시 처음부터 역방향으로 진행할 지 지정
+animation-iteration-count: 애니메이션이 몇 번 반복될 지 지정.
+	infinite: 계속 반복
+animation-play-state: 애니메이션을 멈추거나 다시 시작
+	paused: 멈춤
+	running: 재생
+animation-timing-function: 중간 상태들의 전환을 어떤 시간 간격으로 진행할 지 지정
+	ease-in: 점점 빠르게
+	ease-out: 점점 느리게
+	ease-in-out: 느렸다가 빠르게
+	linear: 등속운동
+animation-fill-mode: 시작되기 전이나 끝나고 난 후 어떤 값으로 적용될지 지정합니다.
+	forwards;
+*/
+
+/* Css Transform 
+
+transform:scaleX(x축 비율);          // x축으로 확대, 축소
+transform:scaleY(y축 비율);          // y축으로 확대, 축소
+transform:scale(x축 비율, y축 비율);  // x축, y축으로 확대, 축소
+ 
+transform:rotateX(Ndeg);  // x축 기준으로 N도 만큼 회전
+transform:rotateY(Ndeg);  // y축 기준으로 N도 만큼 회전
+transform:rotate(Ndeg);   // N도 만큼 회전
+ 
+transform:translateX(10px);        // X축으로 10px 이동
+transform:translateY(10px);        // Y축으로 10px 이동
+transform:translate(-10px, -10px); // X축으로 -10px, Y축으로 -10px 이동
+ 
+transform:skewX(Ndeg);             // x축으로 N도 만큼 기울이기
+transform:skewY(Ndeg);             // y축으로 N도 만큼 기울이기
+transform:skew(x축 Ndeg, y축 Ndeg); // x축, y축으로 N도 만큼 기울이기
+ 
+transform-origin:x축 y축;  // px, 백분율(%), left, center, right 중에서 사용할 수 있습니다.
+*/
